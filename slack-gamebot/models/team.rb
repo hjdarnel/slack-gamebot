@@ -27,7 +27,7 @@ class Team
   end
 
   def upgrade_text
-    ""
+    ''
   end
 
   def captains
