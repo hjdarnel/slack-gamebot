@@ -2,7 +2,7 @@ Slack-Gamebot
 =============
 ## Usage
 
-Start talking to your bot!
+Start talking to your bot! All commands can be addressed to the bot's username, pp, or :pingpong: (any aliases)
 
 ![](screenshots/hi.png)
 
