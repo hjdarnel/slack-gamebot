@@ -4,14 +4,6 @@ describe SlackGamebot::Commands::Unregister, vcr: { cassette_name: 'user_info' }
   let!(:team) { Fabricate(:team) }
   let(:app) { SlackGamebot::Server.new(team: team) }
   let(:client) { app.send(:client) }
-  context 'team' do
-    let!(:team) { Fabricate(:team) }
-    it 'is a premium feature' do
-      expect(message: "#{SlackRubyBot.config.user} unregister", user: 'user').to respond_with_slack_message(
-        "This is a premium feature. Upgrade your team to premium for $29.99 a year at https://www.playplay.io/upgrade?team_id=#{team.team_id}&game=#{team.game.name}."
-      )
-    end
-  end
   context 'premium team' do
     let!(:team) { Fabricate(:team, premium: true) }
     it 'requires a captain to unregister someone' do
