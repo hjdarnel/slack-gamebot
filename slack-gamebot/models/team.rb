@@ -27,7 +27,7 @@ class Team
   end
 
   def upgrade_text
-    "Upgrade your team to premium for $29.99 a year at https://www.playplay.io/upgrade?team_id=#{team_id}&game=#{game.name}."
+    ''
   end
 
   def captains

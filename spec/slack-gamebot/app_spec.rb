@@ -19,19 +19,6 @@ describe SlackGamebot::App do
     before do
       allow(Team).to receive(:active).and_return(teams)
     end
-    context '#deactivate_dead_teams!' do
-      it 'deactivates teams inactive for two weeks' do
-        expect(active_team).to_not receive(:inform!)
-        expect(active_team_one_week_ago).to_not receive(:inform!)
-        expect(active_team_four_weeks_ago).to receive(:inform!).with(SlackGamebot::App::DEAD_MESSAGE, 'dead').once
-        expect(premium_team_a_month_ago).to_not receive(:inform!)
-        subject.send(:deactivate_dead_teams!)
-        expect(active_team.reload.active).to be true
-        expect(active_team_one_week_ago.reload.active).to be true
-        expect(active_team_four_weeks_ago.reload.active).to be false
-        expect(premium_team_a_month_ago.reload.active).to be true
-      end
-    end
     context '#nudge_sleeping_teams!' do
       it 'deactivates teams inactive for two weeks' do
         expect(active_team).to_not receive(:nudge!)
