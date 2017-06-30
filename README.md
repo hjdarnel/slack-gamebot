@@ -35,12 +35,12 @@ Registers a user.
 This command can also update a user's registration, for example after the user has been renamed. The bot notices user renames, but this may be necessary if the bot wasn't running during that operation.
 
 ```
-gamebot register
+pp register
 
 Welcome back Victor Barna! I've updated your registration.
 ```
 
-You can also remove yourself from the leaderboard with `gamebot unregister me` and re-register youself again with `gamebot register`.
+You can also remove yourself from the leaderboard with `pp unregister me` and re-register youself again with `pp register`.
 The data is not removed, but the user will no longer appear in the leaderboards and cannot participate in challenges.
 
 #### pp challenge &lt;opponent&gt; ... [with &lt;teammate&gt; ...]
@@ -48,7 +48,7 @@ The data is not removed, but the user will no longer appear in the leaderboards 
 Creates a new challenge between you and an opponent.
 
 ```
-gamebot challenge @WangHoe
+pp challenge @WangHoe
 
 Victor Barna challenged Wang Hoe to a match!
 ```
@@ -56,7 +56,7 @@ Victor Barna challenged Wang Hoe to a match!
 You can create group challenges, too. Both sides must have the same number of players.
 
 ```
-gamebot challenge @WangHoe @ZhangJike with @DengYaping
+pp challenge @WangHoe @ZhangJike with @DengYaping
 
 Victor Barna and Deng Yaping challenged Wang Hoe and Zhang Jike to a match!
 ```
@@ -66,7 +66,7 @@ Victor Barna and Deng Yaping challenged Wang Hoe and Zhang Jike to a match!
 Accept a challenge.
 
 ```
-gamebot accept
+pp accept
 
 Wang Hoe and Zhang Jike accepted Victor Barna and Deng Yaping's challenge.
 ```
@@ -82,7 +82,7 @@ You cannot record a win.
 Record your loss with a score, loser first.
 
 ```
-gamebot lost 5:21
+pp lost 5:21
 
 Match has been recorded! Wang Hoe crushed Victor Barna with the score of 21:5.
 ```
@@ -90,7 +90,7 @@ Match has been recorded! Wang Hoe crushed Victor Barna with the score of 21:5.
 You can record scores for an entire match.
 
 ```
-gamebot lost 15:21 21:17 18:21
+pp lost 15:21 21:17 18:21
 
 Match has been recorded! Wang Hoe defeated Victor Barna with the scores of 21:15 17:21 21:18.
 ```
@@ -98,11 +98,11 @@ Match has been recorded! Wang Hoe defeated Victor Barna with the scores of 21:15
 You can record scores for a match you have already lost.
 
 ```
-gamebot lost
+pp lost
 
 Match has been recorded! Wang Hoe defeated Victor Barna.
 
-gamebot lost 15:21 21:17 18:21
+pp lost 15:21 21:17 18:21
 
 Match scores have been updated! Wang Hoe defeated Victor Barna with the scores of 21:15 17:21 21:18.
 ```
@@ -114,7 +114,7 @@ You can record a loss without a challenge.
 You can also record scores and record lost matches with multiple players.
 
 ```
-gamebot lost to @WangHoe @ZhangJike with @DengYaping 5:21
+pp lost to @WangHoe @ZhangJike with @DengYaping 5:21
 
 Match has been recorded! Wang Hoe and Zhang Jike defeated Victor Barna and Deng Yaping with the score of 21:5.
 ```
@@ -124,11 +124,11 @@ Match has been recorded! Wang Hoe and Zhang Jike defeated Victor Barna and Deng 
 Draws a challenge, records a tie. All other players will also have to draw to record a match.
 
 ```
-gamebot draw
+pp draw
 
 Match is a draw, waiting to hear from Victor Barna.
 
-gamebot draw 2:2
+pp draw 2:2
 
 Match has been recorded. Victor Barna tied with Zhang Jike with a score of 2:2.
 ```
@@ -138,7 +138,7 @@ Match has been recorded. Victor Barna tied with Zhang Jike with a score of 2:2.
 Records your resignation, which is a special kind of `lost` without a score.
 
 ```
-gamebot resigned
+pp resigned
 
 Match has been recorded! Victor Barna resigned against Wang Hoe.
 ```
@@ -148,7 +148,7 @@ Match has been recorded! Victor Barna resigned against Wang Hoe.
 You can resign without a prior challenge.
 
 ```
-gamebot resigned to WangHoe
+pp resigned to WangHoe
 
 Match has been recorded! Victor Barna resigned against Wang Hoe.
 ```
@@ -158,7 +158,7 @@ Match has been recorded! Victor Barna resigned against Wang Hoe.
 Decline a challenge.
 
 ```
-gamebot decline
+pp decline
 
 Wang Hoe and Zhang Jike declined Victor Barna and Deng Yaping's challenge.
 ```
@@ -168,7 +168,7 @@ Wang Hoe and Zhang Jike declined Victor Barna and Deng Yaping's challenge.
 Cancel a challenge.
 
 ```
-gamebot cancel
+pp cancel
 
 Victor Barna and Deng Yaping canceled a challenge against Wang Hoe and Zhang Jike.
 ```
@@ -178,7 +178,7 @@ Victor Barna and Deng Yaping canceled a challenge against Wang Hoe and Zhang Jik
 Get the leaderboard.
 
 ```
-gamebot leaderboard
+pp leaderboard
 
 1. Victor Barna: 3 wins, 2 losses (elo: 148, lws: 5)
 2. Deng Yaping: 1 win, 3 losses (elo: 24)
@@ -190,7 +190,7 @@ The leaderboard contains 3 topmost players ranked by [Elo](http://en.wikipedia.o
 In case you want to see leaderboard in reverse order (which would be totally wrong but motivational for people at the bottom of leaderboard), specify a negative number or `-infinity`:
 
 ```
-gamebot leaderboard -5
+pp leaderboard -5
 
 1. Wang Hoe: 0 wins, 1 loss (elo: -12)
 2. Deng Yaping: 1 win, 3 losses (elo: 24)
@@ -202,7 +202,7 @@ gamebot leaderboard -5
 Displays top 10 match totals in the current season.
 
 ```
-gamebot matches
+pp matches
 
 Victor Barna defeated Wang Hoe 3 times
 Deng Yaping defeated Victor Barna once
@@ -211,7 +211,7 @@ Deng Yaping defeated Victor Barna once
 You can also get match totals for specific players.
 
 ```
-gamebot matches @WangHoe
+pp matches @WangHoe
 
 Victor Barna defeated Wang Hoe 5 times
 Wang Hoe defeated Deng Yaping twice
@@ -228,7 +228,7 @@ Displays all outstanding (proposed and accepted) challenges.
 Show the smallest range of ranks for a list of players.  If no user is specified, your rank is shown.
 
 ```
-gamebot rank @WangHoe @DengYaping
+pp rank @WangHoe @DengYaping
 
 2. Deng Yaping: 1 win, 3 losses (elo: 24)
 3. Wang Hoe: 0 wins, 1 loss (elo: -12)
@@ -236,10 +236,10 @@ gamebot rank @WangHoe @DengYaping
 
 #### pp promote &lt;player&gt; ...
 
-Promotes other users to captain. Must be a captain to do that.
+Promotes other users to captain. Must be a captain to do that. A captain is similar to an Admin.
 
 ```
-gamebot promote @WangHoe @DengYaping
+pp promote @WangHoe @DengYaping
 
 Victor Barna promoted Wang Hoe and Deng Yaping to captain.
 ```
@@ -249,7 +249,7 @@ Victor Barna promoted Wang Hoe and Deng Yaping to captain.
 Demotes from captain to a normal user. Must be a captain and the team must have other captains to do this.
 
 ```
-gamebot demote me
+pp demote me
 
 Victor Barna is no longer captain.
 ```
@@ -259,7 +259,7 @@ Victor Barna is no longer captain.
 Display current team's info, including captains.
 
 ```
-gamebot team
+pp team
 
 Team _China_, captains Deng Yaping and Victor Barna.
 ```
@@ -269,7 +269,7 @@ Team _China_, captains Deng Yaping and Victor Barna.
 Reset all users and pending challenges and start a new season. Must be a captain to do this and confirm by specifying the team ID or name.
 
 ```
-gamebot reset china
+pp reset china
 
 Welcome to the new season!
 ```
@@ -279,7 +279,7 @@ Welcome to the new season!
 Display current season's leader and game totals.
 
 ```
-gamebot season
+pp season
 
 Current: Deng Yaping: 1 win, 0 losses (elo: 48), 1 game, 2 players
 ```
@@ -289,7 +289,7 @@ Current: Deng Yaping: 1 win, 0 losses (elo: 48), 1 game, 2 players
 Display current season's leader, past seasons' winners and game totals.
 
 ```
-gamebot seasons
+pp seasons
 
 Current: Deng Yaping: 1 win, 0 losses (elo: 48), 1 game, 2 players
 2015-07-16: Wang Hoe: 28 wins, 19 losses (elo: 214), 206 games, 25 players
@@ -300,7 +300,7 @@ Current: Deng Yaping: 1 win, 0 losses (elo: 48), 1 game, 2 players
 Captains can remove users.
 
 ```
-gamebot unregister @WangHoe
+pp unregister @WangHoe
 
 I've removed @WangHoe from the leaderboard.
 ```
@@ -310,25 +310,25 @@ I've removed @WangHoe from the leaderboard.
 Sets a nickname for display purposes.
 
 ```
-gamebot set nickname John Doe
+pp set nickname John Doe
 ```
 
 Unset a nickname.
 
 ```
-gamebot unset nickname
+pp unset nickname
 ```
 
 Captains can set nicknames of users by using a Slack mention.
 
 ```
-gamebot set nickname @WangHoe John Doe
+pp set nickname @WangHoe John Doe
 ```
 
 Captains can unset nicknames, too.
 
 ```
-gamebot unset nickname @WangHoe
+pp unset nickname @WangHoe
 ```
 
 #### pp set gifs on|off
@@ -336,7 +336,7 @@ gamebot unset nickname @WangHoe
 Enable/disable GIFs for your team.
 
 ```
-gamebot set gifs off
+pp set gifs off
 
 GIFs for team China are off.
 ```
@@ -350,11 +350,11 @@ Using `unset gifs` is equivalent to `set gifs off`.
 Set and resets the base elo for new seasons. Default is 0.
 
 ```
-gamebot set elo 1000
+pp set elo 1000
 ```
 
 ```
-gamebot unset elo
+pp unset elo
 ```
 
 #### pp set aliases &lt;alias|none&gt; ...
@@ -362,7 +362,7 @@ gamebot unset elo
 Set additional aliases for the bot. For example you could upload a custom emoji for :pong: and set an alias for it.
 
 ```
-gamebot set aliases pp :pong:
+pp set aliases pp :pong:
 
 Team China aliases are set to pp and :pong:.
 ```
@@ -376,14 +376,14 @@ Remove all aliases with `unset aliases`.
 Enable/disable team data in the public API for your team and displays team API URL.
 
 ```
-gamebot set api on
+pp set api on
 
 API for team China is on!
 http://www.playplay.io/api/teams/57224e65bc526eac95bfe316
 ```
 
 ```
-gamebot unset api
+pp unset api
 
 API for team China is off.
 ```
@@ -393,7 +393,7 @@ API for team China is off.
 Allow unbalanced challenges with different number of opponents.
 
 ```
-gamebot set unbalanced on
+pp set unbalanced on
 
 Unbalanced challenges for team China are on!
 ```
