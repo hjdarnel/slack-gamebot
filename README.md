@@ -37,7 +37,7 @@ This command can also update a user's registration, for example after the user h
 ```
 pp register
 
-Welcome back Victor Barna! I've updated your registration.
+Welcome back Buddy Holly! I've updated your registration.
 ```
 
 You can also remove yourself from the leaderboard with `pp unregister me` and re-register youself again with `pp register`.
