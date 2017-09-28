@@ -2,33 +2,10 @@ require 'spec_helper'
 
 describe 'Subscribe', js: true, type: :feature do
   let!(:game) { Fabricate(:game, name: 'pong') }
-  context 'without team_id' do
-    before do
-      visit '/upgrade'
-    end
-    it 'requires a team' do
-      expect(find('#messages')).to have_text('Missing or invalid team ID and/or game.')
-      find('#subscribe', visible: false)
-    end
-  end
-  context 'without game' do
-    let!(:team) { Fabricate(:team) }
-    before do
-      visit "/upgrade?team_id=#{team.team_id}"
-    end
-    it 'requires a game' do
-      expect(find('#messages')).to have_text('Missing or invalid team ID and/or game.')
-      find('#subscribe', visible: false)
-    end
-  end
   context 'for a premium team' do
     let!(:team) { Fabricate(:team, game: game, premium: true) }
     before do
       visit "/upgrade?team_id=#{team.team_id}&game=#{team.game.name}"
-    end
-    it 'displays an error' do
-      expect(find('#messages')).to have_text("Team #{team.name} already has a premium #{team.game.name} subscription, thank you for your support.")
-      find('#subscribe', visible: false)
     end
   end
   shared_examples 'upgrades to premium' do
