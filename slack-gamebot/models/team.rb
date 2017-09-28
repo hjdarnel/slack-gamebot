@@ -66,7 +66,6 @@ class Team
   end
 
   def nudge!
-    inform! "Challenge someone to a game of #{game.name} today!", 'nudge'
     update_attributes!(nudge_at: Time.now)
   end
 

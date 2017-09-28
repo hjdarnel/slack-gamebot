@@ -9,7 +9,6 @@ EOS
       super
       update_unbalanced_teams!
       deactivate_dead_teams!
-      nudge_sleeping_teams!
     end
 
     private
