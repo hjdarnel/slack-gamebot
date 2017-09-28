@@ -19,14 +19,5 @@ describe SlackGamebot::App do
     before do
       allow(Team).to receive(:active).and_return(teams)
     end
-    context '#nudge_sleeping_teams!' do
-      it 'deactivates teams inactive for two weeks' do
-        expect(active_team).to_not receive(:nudge!)
-        expect(active_team_one_week_ago).to_not receive(:nudge!)
-        expect(active_team_four_weeks_ago).to receive(:nudge!)
-        expect(premium_team_a_month_ago).to receive(:nudge!)
-        subject.send(:nudge_sleeping_teams!)
-      end
-    end
   end
 end
